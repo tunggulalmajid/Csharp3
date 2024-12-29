@@ -11,28 +11,11 @@ namespace mencoba_Csharp3
 {
     internal class Program
     {
+        private List <string> dataUser = new List<string> { "ahmad", "boy", "charli", "doni" };
         static void Main(string[] args)
         {
-            //ini array
-            //string[] kata = { "aku", "makan", "minum", "tidur" };
-            //foreach (string s in kata)
-            //{
-            //    Console.Write($"{s} ");
-            //}
-            //Console.WriteLine();
-            //Console.WriteLine($"panjang dari array : {kata.Length}");
-
-            //// ini list
-            //List<string> kata3 = new List<string>();
-            //kata3.Add("ahmad");                                                                                                                                  
-            //kata3.Add("jaja");
-            //Console.WriteLine(kata3.Contains("jaja"));
-            //Console.WriteLine(kata3.Count());          
-            ////foreach (string s in kata3)
-            //{ 
-            //    //Console.WriteLine(s);
-            //}
-            menu();
+            Program program = new Program();
+            program.menu();
         }
         static void enter()
         {
@@ -40,7 +23,7 @@ namespace mencoba_Csharp3
             Console.ReadLine();
 
         }
-        static void menu()
+        void menu()
         {
             do
             {
@@ -89,15 +72,8 @@ namespace mencoba_Csharp3
                 }
             }while (true);
         }
-        static List<string> data()
+        void cekData()
         {
-            List<string> dataUser = new List<string> { "ahmad", "boy", "charli", "doni" };
-            return dataUser;
-        }
-        static void cekData()
-        {
-            
-            List<string> dataUser = data();
             Console.WriteLine("\t\t\tCEK DATA\n\n");
             Console.WriteLine("Daftar User : ");
             for (int i = 0; i < dataUser.Count();i++) 
@@ -108,9 +84,9 @@ namespace mencoba_Csharp3
             Console.Clear ();
             menu();
         }
-        static void tambahData()
+        void tambahData()
         {
-            List<string> dataUser = data();
+            Console.WriteLine("\t\t\tTAMBAH DATA\n\n");
             Console.Write("masukkan nama user baru >> ");
             string userBaru = Console.ReadLine();
             dataUser.Add(userBaru);
@@ -118,9 +94,8 @@ namespace mencoba_Csharp3
             enter ();
             Console.Clear ();
             menu ();
-
         }
-        static void HapusData()
+        void HapusData()
         {
 
         }
