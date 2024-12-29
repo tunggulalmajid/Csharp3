@@ -106,15 +106,24 @@ namespace mencoba_Csharp3
                     Console.WriteLine($"{i + 1}. {dataUser[i]}");
                 }
                 Console.WriteLine("");
+                Console.Write("Pilih data yang ingin dihapus >> ");
                 int pilihanHapus = Convert.ToInt32(Console.ReadLine());
                 if (pilihanHapus > 0 && pilihanHapus <= dataUser.Count())
                 {
                     dataUser.RemoveAt(pilihanHapus - 1);
                     Console.WriteLine("user telah berhasil dihapus");
                     enter();
-
+                    Console.Clear();
+                    menu();
+                    break;
                 }
-            }
+                else
+                {
+                    Console.WriteLine("inputan yang anda berikan tidak valid");
+                    enter();
+                    continue;
+                }
+            }while (true);
         }
 
 
