@@ -97,7 +97,24 @@ namespace mencoba_Csharp3
         }
         void HapusData()
         {
+            do
+            {
+                Console.WriteLine("\t\t\tHAPUS DATA\n\n");
+                Console.WriteLine("Daftar User : ");
+                for (int i = 0; i < dataUser.Count(); i++)
+                {
+                    Console.WriteLine($"{i + 1}. {dataUser[i]}");
+                }
+                Console.WriteLine("");
+                int pilihanHapus = Convert.ToInt32(Console.ReadLine());
+                if (pilihanHapus > 0 && pilihanHapus <= dataUser.Count())
+                {
+                    dataUser.RemoveAt(pilihanHapus - 1);
+                    Console.WriteLine("user telah berhasil dihapus");
+                    enter();
 
+                }
+            }
         }
 
 
