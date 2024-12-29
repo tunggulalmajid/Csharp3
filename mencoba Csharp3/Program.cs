@@ -45,29 +45,29 @@ namespace mencoba_Csharp3
             do
             {
                 Console.WriteLine("\t\t\tPROGARAM SEDERHANA\n\n");
-                Console.WriteLine("MENU : \n\n1. Cek Data\n2. Tambah data\n3. Hapus data\n4. Keluar".ToUpper());
+                Console.WriteLine("MENU : \n\n1. Cek Data\n2. Tambah data\n3. Hapus data\n4. Keluar\n".ToUpper());
                 Console.Write("masukkan opsi yang ingin dipilih >> ");
                 int opsiPilihan = Convert.ToInt32(Console.ReadLine());
                 if (opsiPilihan == 1)
                 {
                     enter();
-                    cekData();
                     Console.Clear();
+                    cekData();
                     break;
                 }
                 else if (opsiPilihan == 2)
                 {
                     enter();
-                    tambahData();
                     Console.Clear();
+                    tambahData();
                     break;
 
                 }
                 else if (opsiPilihan == 3)
                 {
                     enter();
-                    HapusData();
                     Console.Clear();
+                    HapusData();
                     break;
 
                 }
@@ -89,12 +89,35 @@ namespace mencoba_Csharp3
                 }
             }while (true);
         }
+        static List<string> data()
+        {
+            List<string> dataUser = new List<string> { "ahmad", "boy", "charli", "doni" };
+            return dataUser;
+        }
         static void cekData()
         {
             
+            List<string> dataUser = data();
+            Console.WriteLine("\t\t\tCEK DATA\n\n");
+            Console.WriteLine("Daftar User : ");
+            for (int i = 0; i < dataUser.Count();i++) 
+            {
+                Console.WriteLine($"{i+1}. {dataUser[i]}");
+            }
+            enter();
+            Console.Clear ();
+            menu();
         }
         static void tambahData()
         {
+            List<string> dataUser = data();
+            Console.Write("masukkan nama user baru >> ");
+            string userBaru = Console.ReadLine();
+            dataUser.Add(userBaru);
+            Console.WriteLine("user baru berhasil ditambahkan");
+            enter ();
+            Console.Clear ();
+            menu ();
 
         }
         static void HapusData()
